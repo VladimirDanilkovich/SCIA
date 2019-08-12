@@ -55,7 +55,6 @@ describe('Expired CC', function() {
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
     await driver.switchTo().frame(1)
-    await driver.findElement(By.css(".recaptcha-checkbox-border")).click()
     await driver.switchTo().defaultContent()
     await driver.findElement(By.css(".donate-now")).click()
     await driver.sleep(12000)
