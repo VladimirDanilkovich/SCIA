@@ -17,7 +17,6 @@ describe('Expired CC', function() {
     await driver.get("https://sciadev-scia.cs31.force.com/donate")
     vars["href"] = await driver.executeScript("return window.location.href")
     await driver.findElement(By.css(".donate__button--submit")).click()
-    await driver.findElement(By.id("Title *")).click()
     {
       const dropdown = await driver.findElement(By.id("Title *"))
       await dropdown.findElement(By.css("*[value='Mr']")).click()
