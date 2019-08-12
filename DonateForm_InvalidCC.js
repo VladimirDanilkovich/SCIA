@@ -23,7 +23,6 @@ describe('Invalid CC', function() {
     }
     await driver.findElement(By.id("First Name *")).sendKeys("Selenium")
     await driver.findElement(By.id("Last Name *")).sendKeys("Test")
-    await driver.findElement(By.id("Email *")).click()
     await driver.findElement(By.id("Email *")).sendKeys("djjd@gmail.com")
     await driver.findElement(By.css(".col-sm-8 .ng-scope > .form-control")).click()
     await driver.findElement(By.css(".col-sm-8 .ng-scope > .form-control")).sendKeys("2848461638")
