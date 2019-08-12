@@ -21,9 +21,7 @@ describe('Invalid CC', function() {
       const dropdown = await driver.findElement(By.id("Title *"))
       await dropdown.findElement(By.css("*[value='Mr']")).click()
     }
-    await driver.findElement(By.id("First Name *")).click()
     await driver.findElement(By.id("First Name *")).sendKeys("Selenium")
-    await driver.findElement(By.id("Last Name *")).click()
     await driver.findElement(By.id("Last Name *")).sendKeys("Test")
     await driver.findElement(By.id("Email *")).click()
     await driver.findElement(By.id("Email *")).sendKeys("djjd@gmail.com")
