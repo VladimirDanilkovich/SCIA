@@ -21,7 +21,7 @@ describe('Enquiry form', function() {
     await driver.findElement(By.id("Are you *")).click()
     {
       const dropdown = await driver.findElement(By.id("Are you *"))
-      await dropdown.findElement(By.xpath("//option[. = 'Person with a disability']")).click()
+      await dropdown.findElement(By.css("*[value='Person with a disability']")).click()
     }
     await driver.findElement(By.id("First Name *")).click()
     await driver.findElement(By.id("First Name *")).sendKeys("Selenium")
@@ -37,7 +37,7 @@ describe('Enquiry form', function() {
     await driver.findElement(By.id("How did you hear about us? *")).click()
     {
       const dropdown = await driver.findElement(By.id("How did you hear about us? *"))
-      await dropdown.findElement(By.xpath("//option[. = 'Existing Client']")).click()
+      await dropdown.findElement(By.css("*[value='Existing Client']")).click()
     }
     await driver.findElement(By.css(".donate-now")).click()
     await driver.sleep(12000)
