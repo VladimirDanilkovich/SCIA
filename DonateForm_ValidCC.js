@@ -51,7 +51,6 @@ describe('Valid CC', function() {
     }
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
-    await driver.switchTo().frame(1)
     await driver.findElement(By.id("recaptcha-anchor")).click()
     await driver.switchTo().defaultContent()
     await driver.sleep(undefined)
