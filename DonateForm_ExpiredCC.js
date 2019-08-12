@@ -55,6 +55,7 @@ describe('Expired CC', function() {
     await driver.findElement(By.id("CVN")).sendKeys("1738")
     await driver.switchTo().frame(1)
     await driver.switchTo().defaultContent()
+    await driver.findElement(By.id("recaptcha-anchor")).click()
     await driver.findElement(By.css(".donate-now")).click()
     await driver.sleep(12000)
     vars["new_href"] = await driver.executeScript("return window.location.href")
