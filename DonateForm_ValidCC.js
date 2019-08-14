@@ -25,7 +25,6 @@ describe('Valid CC', function() {
     await driver.findElement(By.id("First Name *")).sendKeys("Selenium")
     await driver.findElement(By.id("Last Name *")).sendKeys("Test")
     await driver.findElement(By.id("Email *")).sendKeys("djjd@gmail.com")
-    await driver.findElement(By.css(".col-sm-8 .ng-scope > .form-control")).click()
     await driver.findElement(By.css(".col-sm-8 .ng-scope > .form-control")).sendKeys("2848461638")
     await driver.findElement(By.id("Unit Number or Level Number")).click()
     await driver.findElement(By.id("Unit Number or Level Number")).sendKeys("2")
