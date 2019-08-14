@@ -47,7 +47,7 @@ describe('Valid CC', function() {
     }
     await driver.findElement(By.id("CVN")).sendKeys("1738")
     await driver.switchTo().frame(1)
-    await driver.findElement(By.xpath("//div[@class='g-recaptcha ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty']")).click()
+    await driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/article[1]/div[1]/div[1]/donate[1]/div[1]/main[1]/div[2]/div[3]/section[1]/div[1]/form[1]/div[15]/div[1]")).click()
     await driver.switchTo().defaultContent()
     await driver.sleep(5000)
     await driver.findElement(By.css(".donate-now")).click()
