@@ -54,10 +54,9 @@ describe('Valid CC', function() {
     await driver.switchTo().defaultContent()
     await driver.sleep(5000)
     //await driver.findElement(By.css(".donate-now")).click()
-    //await driver.findElement(By.CssSelector(".submit-wrap > [style=display:none]"))
-    WebElement elem = yourWebDriverInstance.findElement(By.xpath("//xpath=//div[16]/div/div/input"))
-    String js = "arguments[0].style.height='auto'; arguments[0].style.visibility='visible';";
-    ((JavascriptExecutor) yourWebDriverInstance).executeScript(js, elem);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("javascript to perform action on webelement");
+    await driver.findElement(By.css(".submit-wrap")).click()
     await driver.sleep(20000)
     vars["new_href"] = await driver.executeScript("return window.location.href")
     if (!!await driver.executeScript("return (arguments[0] == arguments[1])", vars["href"],vars["new_href"])) {
