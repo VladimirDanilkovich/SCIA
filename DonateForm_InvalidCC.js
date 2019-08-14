@@ -50,6 +50,12 @@ describe('Invalid CC', function() {
     }
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
+    await driver.switchTo().defaultContent()
+    await driver.sleep(3000)
+    await driver.findElement(By.css(".donate-now")).click()
+    await driver.sleep(12000)
+    vars["new_href"] = await driver.executeScript("return window.location.href")
+    if (!!await driver.executeScript("return (arguments[0] != arguments[1])", vars["href"],vars["new_href"])) {
     await driver.close()
    
     }
