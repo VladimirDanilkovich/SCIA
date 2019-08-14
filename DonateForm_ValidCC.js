@@ -47,7 +47,7 @@ describe('Valid CC', function() {
     }
     await driver.findElement(By.id("CVN")).sendKeys("1738")
     await driver.switchTo().frame(1)
-    await driver.findElement(By.css(".recaptcha-checkbox goog-inline-block recaptcha-checkbox-unchecked rc-anchor-checkbox recaptcha-checkbox-expired")).click()
+    await driver.findElement(By.xpath("//*[@id="recaptcha-anchor"]/div[1]")).click()
     await driver.switchTo().defaultContent()
     await driver.sleep(5000)
     await driver.findElement(By.css(".donate-now")).click()
