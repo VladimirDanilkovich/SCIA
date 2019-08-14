@@ -59,6 +59,9 @@ describe('Valid CC', function() {
     vars["new_href"] = await driver.executeScript("return window.location.href")
     if (!!await driver.executeScript("return (arguments[0] == arguments[1])", vars["href"],vars["new_href"])) {
     await driver.close()
+    WebElement elem = yourWebDriverInstance.findElement(By.xpath("//xpath=//div[16]/div/div/input"))
+    String js = "arguments[0].style.height='auto'; arguments[0].style.visibility='visible';";
+    ((JavascriptExecutor) yourWebDriverInstance).executeScript(js, elem);
     }
   })
 })
