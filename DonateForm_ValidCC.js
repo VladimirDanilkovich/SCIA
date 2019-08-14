@@ -60,8 +60,6 @@ describe('Valid CC', function() {
     vars["new_href"] = await driver.executeScript("return window.location.href")
     if (!!await driver.executeScript("return (arguments[0] == arguments[1])", vars["href"],vars["new_href"])) {
     await driver.close()
-    IList<IWebElement> hiddenElements = driver.FindElements(By.CssSelector(".k-master-row > [style=display:none]"));
-    string text = hiddenElements[1].GetAttribute("textContent");
     }
   })
 })
