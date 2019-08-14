@@ -56,7 +56,7 @@ describe('Valid CC', function() {
     await driver.sleep(5000)
     //await driver.findElement(By.css(".donate-now")).click()
    // IList<IWebElement> hiddenElements = await driver.findElement(By.CssSelector(".donate-now > [style=display:none]")).click()
-    await driver.findElement(By.css(".submit-wrap > [style=display:none]")).click()
+    await driver.findElement(By.css(".submit-wrap [style=display:none]")).click()
     //string text = hiddenElements[1].GetAttribute("textContent")
     await driver.sleep(20000)
     vars["new_href"] = await driver.executeScript("return window.location.href")
