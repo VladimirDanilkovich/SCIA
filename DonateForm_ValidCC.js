@@ -15,9 +15,10 @@ describe('Valid CC', function() {
   })
   it('Valid CC', async function() {
     await driver.get("https://sciadev-scia.cs31.force.com/donate")
+    await driver.sleep(3000)
     vars["href"] = await driver.executeScript("return window.location.href")
     await driver.findElement(By.css(".donate__button--submit")).click()
-    await driver.findElement(By.id("Title *")).click()
+    //await driver.findElement(By.id("Title *")).click()
     {
       const dropdown = await driver.findElement(By.id("Title *"))
       await dropdown.findElement(By.css("*[value='Mr']")).click()
