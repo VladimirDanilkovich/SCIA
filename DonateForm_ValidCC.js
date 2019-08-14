@@ -51,12 +51,9 @@ describe('Valid CC', function() {
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
    // await driver.findElement(By.css(".rc-anchor")).click()
-    await driver.switchTo().defaultContent()
+    //await driver.switchTo().defaultContent()
     await driver.sleep(5000)
-    //await driver.findElement(By.css(".donate-now")).click()
-    JavascriptExecutor js = (JavascriptExecutor) driver;
-    js.executeScript("javascript to perform action on webelement");
-    await driver.findElement(By.css(".submit-wrap")).click()
+    await driver.findElement(By.xpath("//div[16]/div/div/input")).click()
     await driver.sleep(20000)
     vars["new_href"] = await driver.executeScript("return window.location.href")
     if (!!await driver.executeScript("return (arguments[0] == arguments[1])", vars["href"],vars["new_href"])) {
