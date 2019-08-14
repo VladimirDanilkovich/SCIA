@@ -3,7 +3,7 @@ const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
 describe('Valid CC', function() {
-  this.timeout(30000)
+  this.timeout(50000)
   let driver
   let vars
   beforeEach(async function() {
@@ -26,7 +26,6 @@ describe('Valid CC', function() {
     await driver.findElement(By.id("Last Name *")).sendKeys("Test")
     await driver.findElement(By.id("Email *")).sendKeys("djjd@gmail.com")
     await driver.findElement(By.css(".col-sm-8 .ng-scope > .form-control")).sendKeys("2848461638")
-    await driver.findElement(By.id("Unit Number or Level Number")).click()
     await driver.findElement(By.id("Unit Number or Level Number")).sendKeys("2")
     await driver.findElement(By.css(".c-google-address-autocomplete > #address")).click()
     await driver.findElement(By.css(".c-google-address-autocomplete > #address")).sendKeys("dd")
@@ -34,9 +33,7 @@ describe('Valid CC', function() {
     await driver.findElement(By.id("State *")).sendKeys("Arizona")
     await driver.findElement(By.id("Postcode *")).sendKeys("12345766")
     await driver.findElement(By.id("Comments")).sendKeys("sss")
-    await driver.findElement(By.id("customerName")).click()
     await driver.findElement(By.id("customerName")).sendKeys("asdff")
-    await driver.findElement(By.id("cardNumber")).click()
     await driver.findElement(By.id("cardNumber")).sendKeys("4444 3333 2222 1111")
     await driver.findElement(By.id("Expiry Month *")).click()
     {
@@ -46,18 +43,19 @@ describe('Valid CC', function() {
     await driver.findElement(By.id("Expiry Year *")).click()
     {
       const dropdown = await driver.findElement(By.id("Expiry Year *"))
-      await dropdown.findElement(By.css("*[value='2032']")).click()
+      await dropdown.findElement(By.css("*[value = '2032']")).click()
     }
-    await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
-   // await driver.findElement(By.css(".rc-anchor")).click()
-    //await driver.switchTo().defaultContent()
+    await driver.switchTo().frame(1)
+    await driver.findElement(By.css(".recaptcha-checkbox-border")).click()
+    await driver.switchTo().defaultContent()
     await driver.sleep(5000)
-    await driver.findElement(By.xpath("//div[16]/div/div/input")).click()
+    await driver.findElement(By.css(".donate-now")).click()
     await driver.sleep(20000)
     vars["new_href"] = await driver.executeScript("return window.location.href")
     if (!!await driver.executeScript("return (arguments[0] == arguments[1])", vars["href"],vars["new_href"])) {
-    await driver.close()
+      await driver.close()
     }
   })
 })
+
