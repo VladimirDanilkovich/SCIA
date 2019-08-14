@@ -51,7 +51,7 @@ describe('Valid CC', function() {
     }
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
-    await driver.findElement(By.css(".rc-anchor")).click()
+   // await driver.findElement(By.css(".rc-anchor")).click()
     await driver.switchTo().defaultContent()
     await driver.sleep(2000)
     await driver.findElement(By.css(".donate-now")).click()
