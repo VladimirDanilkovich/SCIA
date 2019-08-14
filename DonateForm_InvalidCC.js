@@ -50,6 +50,7 @@ describe('Invalid CC', function() {
     }
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
+    await driver.close()
    
     }
   })
