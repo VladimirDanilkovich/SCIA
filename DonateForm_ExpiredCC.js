@@ -50,7 +50,8 @@ describe('Expired CC', function() {
     await driver.findElement(By.id("CVN")).click()
     await driver.findElement(By.id("CVN")).sendKeys("1738")
     JavascriptExecutor executor= (JavascriptExecutor)webDriver;
-    executor.executeScript("document.getElementByClassName('donate-now').click();
+    executor.executeScript("document.getElementByClassName('donate-now').style.display='block';");
+    //await driver.executeScript("return window.location.href")
     //await driver.findElement(By.css(".recaptcha-checkbox-border")).click()
     //await driver.findElement(By.css(".donate-now")).click()
     await driver.sleep(12000)
